@@ -3,6 +3,7 @@ function config($httpProvider, $stateProvider, $urlRouterProvider, $provide, $oc
     
     // Satellizer configuration that specifies which API
     // route the JWT should be retrieved from
+   $authProvider.loginUrl = 'http://localhost:8000/api/authenticate';
 
 
     // Configure Idle settings
@@ -27,7 +28,18 @@ function config($httpProvider, $stateProvider, $urlRouterProvider, $provide, $oc
             controller: "UserCtrl as User",
         })
 
-
+        .state('user', {
+            abstract: true,
+            url: "/user",
+            templateUrl: "assets/views/content.html",
+            // data : {
+            //     requireLogin : true
+            // }
+        })
+        .state('user.dashboard', {
+            url: "/home",
+            templateUrl: "app/user/user_dashboard.html",
+        })
         
         /* =============================================
          * AngularJS - Toastr Configuratipon

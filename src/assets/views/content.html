@@ -1,27 +1,15 @@
-<!-- Wrapper-->
-<div id="wrapper">
-
-    <!-- Navigation -->
-    <div ng-include="'assets/views/shared/nav.php'"></div>
-
-    <!-- Page wraper -->
-    <!-- ng-class with current state name give you the ability to extended customization your view -->
-    <div id="page-wrapper" class="gray-bg {{$state.current.name}}">
-
-        <!-- Page wrapper -->
-        <div ng-include="'assets/views/shared/topnav.html'"></div>
-
-        <!-- Main view  -->
-        <div ui-view></div>
-
-        <!-- Footer -->
-        <div ng-include="'assets/views/shared/footer.html'"></div>
-
+<div class="page-container">
+    
+    <div class="page-sidebar">
+     
+        <div ng-include="'assets/views/shared/nav.php'"></div>
+    
     </div>
-    <!-- End page wrapper-->
+    
+    <div class="page-content">
+        <div ng-include="'assets/views/shared/top-nav.php'"></div>
 
-    <!-- Right Sidebar -->
-    <!-- <div ng-include="'assets/views/shared/right_sidebar.html'"></div> -->
+        <div ng-view></div>
+    </div>
 
 </div>
-<!-- End wrapper-->
