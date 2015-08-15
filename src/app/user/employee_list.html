@@ -12,7 +12,7 @@
                                     <div class="input-group-addon">
                                         <span class="fa fa-search"></span>
                                     </div>
-                                    <input type="text" class="form-control" placeholder="Who are you looking for?"/>
+                                    <input ng-model="field_type" type="text" class="form-control" placeholder="Who are you looking for?"/>
                                     <div class="input-group-btn">
                                         <button class="btn btn-primary">Search</button>
                                     </div>
@@ -27,7 +27,7 @@
     </div>
     
     <div class="row">
-        <div class="col-md-3" ng-repeat="(key, user) in User.employees">
+        <div class="col-md-3" ng-repeat="(key, user) in User.employees | filter : field_type">
             <!-- CONTACT ITEM -->
             <div class="panel panel-default">
                 <div class="panel-body profile">
@@ -47,7 +47,7 @@
                     <div class="contact-info">
                         <p><small>Mobile</small><br/><span ng-bind="user.contact"></span></p>
                         <p><small>Email</small><br/><span ng-bind="user.email"></span></p>
-                        <p><small>Address</small><br/><span ng-bind="user.city_name"></span>, <span ng-bind="user.provname"></span></p>                                   
+                        <p><small>Address</small><br/><span ng-bind="user.city_name"></span>, <span ng-bind="user.provname"></span></p>                         
                     </div>
                 </div>                                
             </div>
