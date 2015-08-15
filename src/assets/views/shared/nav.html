@@ -23,11 +23,11 @@
         </div>                                                                        
     </li>
     <li class="xn-title">Navigation</li>
-    <li class="active">
-        <a href="index.html"><span class="fa fa-desktop"></span> <span class="xn-text">Dashboard</span></a>                        
+    <li ng-class="{active: $state.includes('user')}">
+        <a ui-sref="user.dashboard"><span class="fa fa-desktop"></span> <span class="xn-text">Dashboard</span></a>                        
     </li>  
-    <li>
-        <a href="index.html"><span class="fa fa-desktop"></span> <span class="xn-text">Service</span></a>                        
+    <li ng-class="{active: $state.includes('service')}">
+        <a ui-sref="service.form"><span class="fa fa-desktop"></span> <span class="xn-text">Service</span></a>                        
     </li>                    
 
     

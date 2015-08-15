@@ -36,9 +36,26 @@ function config($httpProvider, $stateProvider, $urlRouterProvider, $provide, $oc
                 requireLogin : true
             }
         })
+        
         .state('user.dashboard', {
             url: "/dashboard",
             templateUrl: "app/user/user_dashboard.html",
+            controller: "UserCtrl as User",
+        })
+
+        .state('service', {
+            abstract: true,
+            url: "/service",
+            templateUrl: "assets/views/content.html",
+            data : {
+                requireLogin : true
+            }
+        })
+
+         .state('service.form', {
+            url: "/form",
+            templateUrl: "app/service/match_result.html",
+            controller: "ServiceCtrl as Service",
         })
         
         /* =============================================
