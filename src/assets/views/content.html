@@ -7,9 +7,10 @@
     </div>
     
     <div class="page-content">
-        <div ng-include="'assets/views/shared/top-nav.html'"></div>
-
-        <div ng-view></div>
+        <div ng-include="'assets/views/shared/top_nav.html'"></div>
+        <div class="page-content-wrap">
+            <div ui-view></div>
+        </div>
     </div>
 
 </div>

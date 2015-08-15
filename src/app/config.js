@@ -37,7 +37,7 @@ function config($httpProvider, $stateProvider, $urlRouterProvider, $provide, $oc
             }
         })
         .state('user.dashboard', {
-            url: "/home",
+            url: "/dashboard",
             templateUrl: "app/user/user_dashboard.html",
         })
         
