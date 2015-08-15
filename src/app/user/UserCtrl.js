@@ -9,6 +9,20 @@ angular.module('phwork')
         password : ''
     };
 
+    User.employees = [];
+
+    User.init = function () {
+        User.getEmployees();
+    }
+
+    User.getEmployees = function () {
+        $http.get('http://localhost:8000/api/user/employee')
+        .success(function (data){
+            User.employees = data;
+            console.log(User.employees);
+        })
+    }
+
     User.login = function (event) {
         event.preventDefault();
         // Use Satellizer's $auth service to login
@@ -57,5 +71,7 @@ angular.module('phwork')
                 }
             })
     }
+
+    User.init();
 
 }]);

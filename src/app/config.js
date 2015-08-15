@@ -43,6 +43,12 @@ function config($httpProvider, $stateProvider, $urlRouterProvider, $provide, $oc
             controller: "UserCtrl as User",
         })
 
+        .state('user.employee', {
+            url: "/employee",
+            templateUrl: "app/user/employee_list.html",
+            controller: "UserCtrl as User",
+        })
+
         .state('service', {
             abstract: true,
             url: "/service",
