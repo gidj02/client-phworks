@@ -23,8 +23,8 @@ function config($httpProvider, $stateProvider, $urlRouterProvider, $provide, $oc
     $stateProvider
         .state('login', {
             url: "/login",
-            // templateUrl: "app/user/user_login.html",
-            controller: "UserCtrl as User"
+            templateUrl: "app/user/user_login.html",
+            controller: "UserCtrl as User",
         })
 
 
