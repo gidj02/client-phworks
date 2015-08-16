@@ -23,13 +23,16 @@ angular.module('phwork')
 
     Service.submit = function (event) {
         event.preventDefault();
-        $http.post('http://localhost:8000/api/service',{
+        console.log(Service.data.selectedField.field_id);
+        $http.post('http://localhost:8000/api/request',{
             client_id : $rootScope.currentUser.user_id,
-            field_id : Service.data.selectedField.field_id,
+            field : Service.data.selectedField.field_id,
             description :Service.data.description            
         })
-        .success( function (data) {
-            
+        .success(function(data, status, headers, config) {
+            console.log(data);
+            $state.go('service.match');
+            toastr.success('They are the workers suited for your problem!.', 'Matching with PHWorkers!');
         });
     }
 
