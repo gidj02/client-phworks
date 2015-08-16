@@ -23,13 +23,14 @@ angular.module('phwork')
 
     Service.submit = function (event) {
         event.preventDefault();
-        // console.log(Service.data);
-        // $http.post('http://localhost:8000/api/service',{
-        //     client_id : $rootScope.currentUser.user_id,
-        //     field_id : Service.data.selectedField,
-        //     description :Service.data.description
+        $http.post('http://localhost:8000/api/service',{
+            client_id : $rootScope.currentUser.user_id,
+            field_id : Service.data.selectedField.field_id,
+            description :Service.data.description            
+        })
+        .success( function (data) {
             
-        // })
+        });
     }
 
     Service.init();

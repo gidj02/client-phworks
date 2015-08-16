@@ -52,9 +52,15 @@ function config($httpProvider, $stateProvider, $urlRouterProvider, $provide, $oc
             templateUrl: "assets/views/content.html",
         })
 
-         .state('service.form', {
+        .state('service.form', {
             url: "/form",
             templateUrl: "app/service/service_form.html",
+            controller: "ServiceCtrl as Service"
+        })
+
+        .state('service.match', {
+            url: "/match",
+            templateUrl: "app/service/match_result.html",
             controller: "ServiceCtrl as Service"
         })
         
