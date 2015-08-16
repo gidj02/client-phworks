@@ -39,8 +39,8 @@
                         <div class="profile-data-title" ng-bind="user.field_name"></div>
                     </div>
                     <div class="profile-controls">
-                        <a href="#" class="profile-control-left"><span class="fa fa-info"></span></a>
-                        <a href="#" class="profile-control-right"><span class="fa fa-phone"></span></a>
+                        <a class="profile-control-left"><span class="fa fa-info"></span></a>
+                        <a class="profile-control-right" ng-click="User.openContactModal(user.contact)"><span class="fa fa-phone"></span></a>
                     </div>
                 </div>                                
                 <div class="panel-body">                                    

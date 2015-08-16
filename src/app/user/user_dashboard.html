@@ -46,8 +46,8 @@
         <!-- END TIMELINE ITEM -->
         
         <!-- START TIMELINE ITEM -->
-        <div class="timeline-item timeline-item-right">
-            <div class="timeline-item-info">Yesterday</div>
+        <div class="timeline-item timeline-item-right" ng-repeat="(key, service) in User.services">
+            <div class="timeline-item-info"> {{service.created_at | fromNow}} </div>
             <div class="timeline-item-icon"><span class="fa fa-globe"></span></div>
             <div class="timeline-item-content">
                 <div class="timeline-heading">

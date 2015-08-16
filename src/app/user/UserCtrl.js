@@ -1,6 +1,6 @@
 angular.module('phwork')
 
-.controller('UserCtrl', ['$http', '$rootScope', '$auth', '$state', 'toastr', function ($http, $rootScope, $auth, $state, toastr) {
+.controller('UserCtrl', ['$http', '$rootScope', '$auth', '$state', 'toastr', '$modal', function ($http, $rootScope, $auth, $state, toastr, $modal) {
 
     User = this;
 
@@ -10,16 +10,44 @@ angular.module('phwork')
     };
 
     User.employees = [];
+    User.services = [];
 
     User.init = function () {
         User.getEmployees();
+        User.getServices();
+    }
+
+    User.openContactModal = function (number) {
+        var modalInstance = $modal.open({
+            templateUrl: 'app/user/user_contact_modal.html',
+            controller: "UserModalInstanceCtrl as ModalInstance",
+            windowClass: "animated bounceInDown",
+            size: 'md'
+        });
+
+        modalInstance.result.then(function (data) {
+            $http.post('http://localhost:8000/api/send', {
+                name: data.name,
+                message: data.message,
+                number: number
+            }).success(function(data, status, headers, config) {
+                toastr.success('Message Successfully Sent!.', 'You are now connector to PHWorkers!');
+            });
+        });
     }
 
     User.getEmployees = function () {
         $http.get('http://localhost:8000/api/user/employee')
         .success(function (data){
             User.employees = data;
-            console.log(User.employees);
+        })
+    }
+
+    User.getServices = function () {
+        $http.get('http://localhost:8000/api/service')
+        .success(function (data){
+            User.services = data;
+            console.log(User.services);
         })
     }
 
