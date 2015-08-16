@@ -1,8 +1,6 @@
-
-<div class="login-container">
+<div class="login-container" style="background-color: #000000">
 
     <div class="login-box animated fadeInDown">
-        <div class="login-logo"></div>
         <div class="login-body">
             <div class="login-title"><strong>Welcome</strong>, Please login</div>
             <form class="m-t" role="form" action="#" style="color: black" ng-submit="User.login ($event)">
@@ -12,23 +10,20 @@
                 </div>
             </div>
             <div class="form-group">
-                <div class="col-md  -12">
+                <div class="col-md-12">
                     <input type="password" class="form-control" required="" ng-model="User.credentials.password" placeholder="Password"/>
                 </div>
             </div>
             <div class="form-group">
-                <div class="col-md-6">
-                    <a href="#" class="btn btn-link btn-block">Forgot your password?</a>
-                </div>
                 <div class="col-md-6">
                     <button type="submit" ng-disabled="form.$invalid || dataLoading" class="btn btn-info btn-block">Log In</button>
                 </div>
             </div>
             </form>
         </div>
-        <div class="login-footer">
+        <div class="login-footer" style="margin-top: 5%">
             <div class="pull-left">
-                &copy; 2014 AppName
+                &copy; 2015 PHWorks
             </div>
             <div class="pull-right">
                 <a href="#">About</a> |
