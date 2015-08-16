@@ -120,7 +120,7 @@ angular
                     // to stay there and can send the user to the main state
                     if(toState.name === "login") {
 
-                        toastr.warning('You\'re currently Logged In.', 'Welcome to Vinteo Inc!');
+                        toastr.warning('You\'re currently Logged In.', 'PHWorks, Continuing to serve you!');
                         // Preventing the default behavior allows us to use $state.go
                         // to change states
                         event.preventDefault();

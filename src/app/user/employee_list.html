@@ -32,7 +32,7 @@
             <div class="panel panel-default">
                 <div class="panel-body profile">
                     <div class="profile-image">
-                        <img src="assets/img/{{ user.image }}" alt="Nadia Ali" height="100" width="100" />
+                        <img ng-src="assets/img/{{ user.image }}" alt="Nadia Ali" height="100" width="100" />
                     </div>
                     <div class="profile-data">
                         <div class="profile-data-name" ng-bind="user.name"></div>
@@ -57,12 +57,9 @@
     <div class="row">
         <div class="col-md-12">
             <ul class="pagination pagination-sm pull-right push-down-10 push-up-10">
-                <li class="disabled"><a href="#">«</a></li>
-                <li class="active"><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>                                    
-                <li><a href="#">»</a></li>
+                <li class="disabled"><a href="javascript:void(0);">«</a></li>
+                <li class="active"><a href="javascript:void(0);">1</a></li>                               
+                <li><a href="javascript:void(0);">»</a></li>
             </ul>                            
         </div>
     </div>
