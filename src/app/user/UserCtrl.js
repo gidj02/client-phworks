@@ -43,7 +43,6 @@ angular.module('phwork')
 
             angular.forEach(User.employees, function(value, key){
                 value.rating = (value.rating/5)*100;
-                console.log(value.rating);
             });
         })
     }

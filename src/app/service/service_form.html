@@ -53,7 +53,7 @@
                         <div class="profile-data-name" ng-bind="employee.name"></div>
                         <div class="profile-data-title" ng-bind="employee.field_name"></div>
                     </div>
-                    <div class="profile-controls">
+                    <div class="profile-controls" ng-controller="UserCtrl as User">
                         <a class="profile-control-left"><span class="fa fa-info"></span></a>
                         <a class="profile-control-right" ng-click="User.openContactModal(employee.contact)"><span class="fa fa-phone"></span></a>
                     </div>
