@@ -93,5 +93,42 @@ function config($httpProvider, $stateProvider, $urlRouterProvider, $provide, $oc
 }
 angular
     .module('phwork')
-    .config(config);
-   
+    .config(config)
+    .run(function($rootScope, $state, toastr) {
+
+            // $stateChangeStart is fired whenever the state changes. We can use some parameters
+            // such as toState to hook into details about the state as it is changing
+            $rootScope.$on('$stateChangeStart', function(event, toState) {
+
+                // Grab the user from local storage and parse it to an object
+                var user = JSON.parse(localStorage.getItem('user'));            
+
+                if(user) {
+
+
+                    // The user's authenticated state gets flipped to
+                    // true so we can now show parts of the UI that rely
+                    // on the user being logged in
+                    $rootScope.authenticated = true;
+
+                    // Putting the user's data on $rootScope allows
+                    // us to access it anywhere across the app. Here
+                    // we are grabbing what is in local storage
+                    $rootScope.currentUser = user;
+
+                    // If the user is logged in and we hit the auth route we don't need
+                    // to stay there and can send the user to the main state
+                    if(toState.name === "login") {
+
+                        toastr.warning('You\'re currently Logged In.', 'Welcome to Vinteo Inc!');
+                        // Preventing the default behavior allows us to use $state.go
+                        // to change states
+                        event.preventDefault();
+
+                        // go to the "main" state which in our case is users
+                        $state.go('user.dashboard');
+                    }       
+                }
+
+            });
+        });
