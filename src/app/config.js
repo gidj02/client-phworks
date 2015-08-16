@@ -94,3 +94,4 @@ function config($httpProvider, $stateProvider, $urlRouterProvider, $provide, $oc
 angular
     .module('phwork')
     .config(config);
+   

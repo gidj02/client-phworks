@@ -5,7 +5,10 @@ angular.module('phwork')
     Service = this;
 
     Service.fields = [];
-    Service.selectedField = "";
+    Service.data = {
+        selectedField : "",
+        description : ""
+    }
 
     Service.init = function () {
         Service.getFields();
@@ -17,6 +20,17 @@ angular.module('phwork')
             Service.fields = data;
         });
     } 
+
+    Service.submit = function (event) {
+        event.preventDefault();
+        // console.log(Service.data);
+        // $http.post('http://localhost:8000/api/service',{
+        //     client_id : $rootScope.currentUser.user_id,
+        //     field_id : Service.data.selectedField,
+        //     description :Service.data.description
+            
+        // })
+    }
 
     Service.init();
 }]);
