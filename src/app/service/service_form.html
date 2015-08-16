@@ -34,3 +34,51 @@
         
     </div>
 </div>
+
+<div class="row" ng-if="Service.match_employees != null">
+<div class="panel-heading">                                
+    <h3 class="panel-title">Matched Applicants</h3>                              
+</div>
+
+<div class="panel-body">
+    <div class="row" >
+        <div class="col-md-3" ng-repeat="(key, employee) in Service.match_employees">
+            <!-- CONTACT ITEM -->
+            <div class="panel panel-default">
+                <div class="panel-body profile">
+                    <div class="profile-image">
+                        <img ng-src="assets/img/{{ employee.image }}" alt="Nadia Ali" height="100" width="100" />
+                    </div>
+                    <div class="profile-data">
+                        <div class="profile-data-name" ng-bind="employee.name"></div>
+                        <div class="profile-data-title" ng-bind="employee.field_name"></div>
+                    </div>
+                    <div class="profile-controls">
+                        <a class="profile-control-left"><span class="fa fa-info"></span></a>
+                        <a class="profile-control-right" ng-click="User.openContactModal(employee.contact)"><span class="fa fa-phone"></span></a>
+                    </div>
+                </div>                                
+                <div class="panel-body">                                    
+                    <div class="contact-info">
+                        <p><small>Mobile</small><br/><span ng-bind="employee.contact"></span></p>
+                        <p><small>Email</small><br/><span ng-bind="employee.email"></span></p>
+                        <p><small>Address</small><br/><span ng-bind="employee.city_name"></span>, <span ng-bind="employee.provname"></span></p><hr>           
+                         <p><small>Match Percentage by location</small><br/><span ng-bind="employee.locationPoints * 100"> </span> %
+                         <p><small>Match Percentage by your Problem</small><br/><span ng-bind="employee.tagPoints * 100"> </span> %                      
+                    </div>
+                </div>                                
+            </div>
+            <!-- END CONTACT ITEM -->
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <ul class="pagination pagination-sm pull-right push-down-10 push-up-10">
+                <li class="disabled"><a href="javascript:void(0);">«</a></li>
+                <li class="active"><a href="javascript:void(0);">1</a></li>                               
+                <li><a href="javascript:void(0);">»</a></li>
+            </ul>                            
+        </div>
+    </div>
+    </div>
+</div>

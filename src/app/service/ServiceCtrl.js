@@ -10,6 +10,8 @@ angular.module('phwork')
         description : ""
     }
 
+    Service.match_employees = null;
+
     Service.init = function () {
         Service.getFields();
     }
@@ -23,15 +25,15 @@ angular.module('phwork')
 
     Service.submit = function (event) {
         event.preventDefault();
-        console.log(Service.data.selectedField.field_id);
+
         $http.post('http://localhost:8000/api/request',{
             client_id : $rootScope.currentUser.user_id,
             field : Service.data.selectedField.field_id,
             description :Service.data.description            
         })
         .success(function(data, status, headers, config) {
-            console.log(data);
-            $state.go('service.match');
+            Service.match_employees = data;
+    
             toastr.success('They are the workers suited for your problem!.', 'Matching with PHWorkers!');
         });
     }

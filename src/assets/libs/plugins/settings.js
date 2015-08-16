@@ -59,6 +59,7 @@ $(document).ready(function(){
     };
     /* End Default settings */
     
+
     set_settings(theme_settings,false);    
     
     $(".theme-settings input").on("ifClicked",function(){
@@ -127,6 +128,8 @@ $(document).ready(function(){
     $(".ts-button").on("click",function(){
         $(".theme-settings").toggleClass("active");
     });
+
+    $(".ts-button").hide();
     /* End open/hide settings */
 });
 

@@ -31,7 +31,7 @@ angular.module('phwork')
                 message: data.message,
                 number: number
             }).success(function(data, status, headers, config) {
-                toastr.success('Message Successfully Sent!.', 'You are now connector to PHWorkers!');
+                toastr.success('Message Successfully Sent!.', 'You are now connected to PHWorkers!');
             });
         });
     }
