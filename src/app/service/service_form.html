@@ -1,0 +1,37 @@
+<div class="row" >
+    <div class="col-md-12">
+        
+        <form class="form-horizontal">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"><strong>What is your </strong> NEED?</h3>
+            </div>
+            <div class="panel-body">                                                                          
+                <div class="form-group">
+                    <label class="col-md-3 col-xs-12 control-label">Select</label>
+                    <div class="col-md-6 col-xs-12">                                                                                            
+                        <select ng-model="Service.selectedField" ng-options="field.field_name for field in Service.fields" class="form-control select">
+                            <option value="">-- Choose Field --</option>
+                        </select>
+                        <span class="help-block">Field of jobs</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-3 col-xs-12 control-label">Description</label>
+                    <div class="col-md-6 col-xs-12">                                            
+                        <textarea class="form-control" rows="5"></textarea>
+                        <span class="help-block">Default textarea field</span>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="panel-footer">
+                <button class="btn btn-default">Clear Form</button>                                    
+                <button class="btn btn-primary pull-right">Submit</button>
+            </div>
+        </div>
+        </form>
+        
+    </div>
+</div>

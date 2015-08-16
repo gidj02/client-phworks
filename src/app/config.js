@@ -54,7 +54,7 @@ function config($httpProvider, $stateProvider, $urlRouterProvider, $provide, $oc
 
          .state('service.form', {
             url: "/form",
-            templateUrl: "app/service/match_result.html",
+            templateUrl: "app/service/service_form.html",
             controller: "ServiceCtrl as Service"
         })
         
