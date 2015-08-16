@@ -47,7 +47,12 @@
                     <div class="contact-info">
                         <p><small>Mobile</small><br/><span ng-bind="user.contact"></span></p>
                         <p><small>Email</small><br/><span ng-bind="user.email"></span></p>
-                        <p><small>Address</small><br/><span ng-bind="user.city_name"></span>, <span ng-bind="user.provname"></span></p>                         
+                        <p><small>Address</small><br/><span ng-bind="user.city_name"></span>, <span ng-bind="user.provname"></span></p>   
+                        <hr>
+                        <p><small>Rating</small><br/>
+                        <div class="progress progress-small progress-striped active">
+                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: {{user.rating}}%;"></div>
+                        </div>                         
                     </div>
                 </div>                                
             </div>

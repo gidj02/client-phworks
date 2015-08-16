@@ -33,6 +33,11 @@ angular.module('phwork')
         })
         .success(function(data, status, headers, config) {
             Service.match_employees = data;
+
+            angular.forEach(Service.match_employees, function(value, key){
+                value.locationPoints *= 100; 
+                value.tagPoints *= 100; 
+            });
     
             toastr.success('They are the workers suited for your problem!.', 'Matching with PHWorkers!');
         });

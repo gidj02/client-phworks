@@ -40,6 +40,11 @@ angular.module('phwork')
         $http.get('http://localhost:8000/api/user/employee')
         .success(function (data){
             User.employees = data;
+
+            angular.forEach(User.employees, function(value, key){
+                value.rating = (value.rating/5)*100;
+                console.log(value.rating);
+            });
         })
     }
 
