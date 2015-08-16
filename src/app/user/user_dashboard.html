@@ -51,14 +51,23 @@
             <div class="timeline-item-icon"><span class="fa fa-globe"></span></div>
             <div class="timeline-item-content">
                 <div class="timeline-heading">
-                    <span class="fa fa-check fa-3x" style="color:#40d47e" ></span> <a href="#">You </a> are served by <a href="#">{{service.name}}</a> 
+                    <span class="fa fa-check fa-3x" style="color:#40d47e" ></span> <a href="#">You </a> are served by <a href="#">{{service.name}}</a>
+                    <ul class="list-tags">                                            
+                        <li><a href="#"><span class="fa fa-wrench"></span> {{service.field_name}}</a></li>
+                    </ul>   
                 </div>
                 <div class="timeline-body">
-                    <img src="assets/img/{{service.image}}" class="img-text" width="100" height="100" align="left"/>
+                    <img ng-src="assets/img/{{service.image}}" class="img-text" width="100" height="100" align="left"/>
                 <p>{{service.service_desc}}</p>
-                    <ul class="list-tags">                                            
-                        <li><a href="#"><span class="fa fa-tag"></span> {{service.field_name}}</a></li>
-                    </ul>                                            
+                <hr>
+                <div class="row">
+                    <div class="col-md-6 pull-right">
+                        <h4><small>Worker's tags</small></h4>
+                        <ul class="list-tags">                                            
+                            <li ng-repeat="(key, tag) in service.tags"><a href="#"><span class="fa fa-tag"></span> {{tag}}</a></li>
+                        </ul>            
+                    </div>
+                </div>                                
                 </div>
             </div>
         </div>       
