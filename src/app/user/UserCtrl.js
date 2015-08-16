@@ -47,7 +47,6 @@ angular.module('phwork')
         $http.get('http://localhost:8000/api/service')
         .success(function (data){
             User.services = data;
-            console.log(User.services);
         })
     }
 
