@@ -47,6 +47,10 @@ angular.module('phwork')
         $http.get('http://localhost:8000/api/service')
         .success(function (data){
             User.services = data;
+
+            angular.forEach(User.services, function(value, key){
+                value.tags = angular.fromJson(value.tags);
+            });
         })
     }
 
