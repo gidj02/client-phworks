@@ -51,15 +51,13 @@
             <div class="timeline-item-icon"><span class="fa fa-globe"></span></div>
             <div class="timeline-item-content">
                 <div class="timeline-heading">
-                    <img src="assets/img/blue.jpg"/> <a href="#">John Doe</a> added article <a href="#">Lorem ipsum dolor sit amet</a>
+                    <span class="fa fa-check fa-3x" style="color:#40d47e" ></span> <a href="#">You </a> are served by <a href="#">{{service.name}}</a> 
                 </div>
                 <div class="timeline-body">
-                    <img src="assets/img/ocean.jpg" class="img-text" width="150" align="left"/>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tempus dolor id orci lacinia, eget aliquam velit consequat.</p>
-                    <p>Vivamus at tincidunt lectus, faucibus condimentum quam. Duis facilisis sem sed eros malesuada, vel dignissim diam ornare. Etiam rhoncus, nibh non auctor mattis, ligula diam mattis dolor, non tincidunt lectus velit nec metus. 
-                       Phasellus dictum justo vitae ornare lobortis. Integer ut lectus vel mauris tempor ultricies eget vitae turpis. Sed eleifend odio quis rutrum volutpat.</p>
+                    <img src="assets/img/{{service.image}}" class="img-text" width="100" height="100" align="left"/>
+                <p>{{service.service_desc}}</p>
                     <ul class="list-tags">                                            
-                        <li><a href="#"><span class="fa fa-tag"></span> tempor</a></li>
+                        <li><a href="#"><span class="fa fa-tag"></span> {{service.field_name}}</a></li>
                     </ul>                                            
                 </div>
             </div>
